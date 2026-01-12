@@ -7,6 +7,7 @@ import MListPage from './pages/member/MListPage';
 import MOnePage from './pages/member/MOnePage';
 import MDeletePage from './pages/member/MDeletePage';
 import NotFound from './components/common/NotFound'
+import MRegPage from './pages/member/MRegPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="list" element={<MListPage />} />
             <Route path="one" element={<MOnePage />} />
             <Route path="delete/:id" element={<MDeletePage />} />
+            <Route path="register" element={<MRegPage />} />
           </Route>
         </Route>
         <Route path="*" element={<NotFound />} />

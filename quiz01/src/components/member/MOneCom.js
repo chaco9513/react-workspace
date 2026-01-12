@@ -10,6 +10,9 @@ function MOneCom({ data, onDelete }) {
         <li>
           <button onClick={() => onDelete(data.id)}>삭제</button>
         </li>
+        <li>
+          <button>수정</button>
+        </li>
         <hr></hr>
         {/* data && <>
             <li>{data.id}</li>
