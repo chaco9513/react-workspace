@@ -6,6 +6,8 @@ import IndexPage from './pages/IndexPage'
 import LoginPage from "./pages/LoginPage";
 import RegPage from "./pages/RegPage";
 import ListPage from "./pages/ListPage";
+import TestContext from './store/TestContext'
+import TestPage from './pages/TestPage';
 
 function App() {
   return (<>
@@ -14,6 +16,7 @@ function App() {
     <Route path="/login" element={<LoginPage />}></Route>
     <Route path="/register" element={<RegPage />}></Route>
     <Route path="/list" element={<ListPage />}></Route>
+    <Route path='/context' element={<TestPage />}></Route>
   </Routes>
     {/* <ReducerCon /> */}
   </>);

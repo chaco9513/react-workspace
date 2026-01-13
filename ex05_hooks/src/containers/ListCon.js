@@ -1,7 +1,8 @@
-import { useEffect, useReducer, useState } from "react";
+import { useContext, useEffect, useReducer, useState } from "react";
 import ListCom from "../components/ListCom";
 import { getList } from "../service/member.js";
 import { reducer, initalData, initalState } from "../moduls/member_red.js";
+import { TestContext } from "../store/TestContext.js";
 
 function ListCon (){
   /*
@@ -17,6 +18,10 @@ function ListCon (){
   // console.log("result : ",result)
   // const [user,setUser] = useState(null);
   const [state, dispatch] = useReducer(reducer, initalState);
+
+  const {data} = useContext(TestContext)
+
+
   useEffect( () => {
     try{
       dispatch({type:"LOADING"})
@@ -35,6 +40,7 @@ function ListCon (){
   console.log(state)
     return (
       <>
+      data.num : {data.number}<br></br>
         <ListCom error={state.error} data={state.data} loading={state.loadding} />
       </>
     );
