@@ -1,11 +1,24 @@
+import { useDispatch, useSelector } from "react-redux";
 import HeaderCom from "../components/HeaderCom";
+import { logout } from "../redux/authSlice";
 
-function HeaderCon (){
-
+ const HeaderCon = () => {
+  const {username,isLoggedIn} = useSelector(state => {
+    return state.auth;
+  })
+  const dispatch = useDispatch();
+  const onLogout = (e) => {
+    e.preventDefault();
+    dispatch(logout())
+  }
 
     return (
       <>
-        <HeaderCom />
+        <HeaderCom
+          username={username}
+          isLoggedIn={isLoggedIn}
+          onLogout={onLogout}
+        />
       </>
     );
 }
